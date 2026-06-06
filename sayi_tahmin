@@ -1,0 +1,27 @@
+gizli_sayi = 7
+tahmin_sayisi = 0
+
+def oyunu_baslat():
+    global gizli_sayi
+    global tahmin_sayisi
+
+    # Bak, while ve altındaki her şey fonksiyonun İÇİNDE (sağda) duruyor:
+    while True:
+        # Gelen sayıyı 'tahmin' isimli kutuya aldık:
+        tahmin = int(input("sayıyı giriniz: "))
+        tahmin_sayisi = tahmin_sayisi + 1
+
+        # Kıyaslamayı 'tahmin' ile yapıyoruz:
+        if tahmin < gizli_sayi:
+            print("daha büyük bir sayı söyleyiniz")
+
+        elif tahmin > gizli_sayi:
+            print("daha küçük bir sayı söyleyiniz")
+
+        else:
+            print("BRAVO DOĞRU TAHMİN")
+            print("Toplam deneme sayınız:", tahmin_sayisi)
+            break  # Oyunu bitirmek için kapıyı kırdık!
+
+# En dışarıda fonksiyonu çağırıp oyunu başlattık
+oyunu_baslat()
